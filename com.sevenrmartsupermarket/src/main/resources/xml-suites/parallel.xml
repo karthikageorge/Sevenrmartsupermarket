@@ -1,0 +1,25 @@
+<suite name="SuperMarketTestSuite" thread-count="5" parallel="classes">
+	<listeners>
+		<listener
+			class-name="com.sevenrmartsupermarket.listeners.ExtentReporter">
+		</listener>
+	</listeners>
+	<test name="Smoke Test">
+		<classes>
+			<class name="com.sevenrmartsupermarket.tests.LoginTest">
+			</class>
+			<!-- <class name="com.sevenrmartsupermarket.tests.AdminUserTest">
+			</class>
+			<class name="com.sevenrmartsupermarket.tests.ManageNewsTest">
+			</class>-->
+		</classes>
+	</test>
+	<test name="Regression Test">
+		<classes>
+			<class name="com.sevenrmartsupermarket.tests.LoginTest">
+			</class>
+			<!--<class name="com.sevenrmartsupermarket.tests.ManageNewsTest">
+			</class>-->
+		</classes>
+	</test>
+</suite>

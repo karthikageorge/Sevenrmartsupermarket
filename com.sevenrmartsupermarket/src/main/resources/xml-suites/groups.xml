@@ -1,0 +1,18 @@
+<suite name="grouptest">
+	<listeners>
+		<listener
+			class-name="com.sevenrmartsupermarket.listeners.ExtentReporter">
+		</listener>
+	</listeners>
+	<test name="smokeandregression">
+		<groups>
+			<run>
+				<include name="regression" />
+			</run>
+		</groups>
+		   <classes>
+            <class name="com.sevenrmartsupermarket.tests.LoginTest" />
+            <class name="com.sevenrmartsupermarket.tests.AdminUserTest" />
+        </classes>
+	</test>
+</suite>

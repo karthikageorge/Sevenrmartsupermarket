@@ -1,0 +1,31 @@
+<suite name="crossbowsertest" thread-count="5" parallel="tests">
+	<listeners>
+		<listener
+			class-name="com.sevenrmartsupermarket.listeners.ExtentReporter">
+		</listener>
+	</listeners>
+	<test name="Executing in Chrome">
+		<parameter name="browser" value="chrome">
+		</parameter>
+		<classes>
+			<class name="com.sevenrmartsupermarket.tests.LoginTest">
+			</class>
+		</classes>
+	</test>
+	<test name="Executing in Edge">
+		<parameter name="browser" value="edge">
+		</parameter>
+		<classes>
+			<class name="com.sevenrmartsupermarket.tests.LoginTest">
+			</class>
+		</classes>
+	</test>
+	<test name="Executing in FireFox">
+		<parameter name="browser" value="firefox">
+		</parameter>
+		<classes>
+			<class name="com.sevenrmartsupermarket.tests.LoginTest">
+			</class>
+		</classes>
+	</test>
+</suite>
