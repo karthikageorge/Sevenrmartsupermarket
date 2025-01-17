@@ -59,19 +59,21 @@ public class LoginPage {
 		signInButtonElement.click();
 	}
 
-	public void login(String userName, String passWord) {
+	public HomePage login(String userName, String passWord) {
 		enterUserName(userName);
 		enterPassword(passWord);
 		clickOnSignInBtn();
+		return new HomePage(driver);
 
 	}
 
-	public void login() {
+	public HomePage login() {
 		String userName = properties.getProperty("username");
 		String passWord = properties.getProperty("password");
 		enterUserName(userName);
 		enterPassword(passWord);
 		clickOnSignInBtn();
+		return new HomePage(driver);
 	}
 
 	public boolean signInBtnIsEnabled() {

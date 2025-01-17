@@ -1,38 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="2" total="3" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-01-15T21:33:52 IST" name="Default suite" finished-at="2025-01-15T21:34:19 IST" duration-ms="27244">
+  <suite started-at="2025-01-17T17:01:35 IST" name="Default suite" finished-at="2025-01-17T17:02:27 IST" duration-ms="51466">
     <groups>
-      <group name="regression">
-        <method signature="LoginTest.verifySignInButtonnIsEnabled()[pri:0, instance:com.sevenrmartsupermarket.tests.LoginTest@25be7b63]" name="verifySignInButtonnIsEnabled" class="com.sevenrmartsupermarket.tests.LoginTest"/>
-      </group> <!-- regression -->
-      <group name="smoke">
-        <method signature="LoginTest.verifySignInButtonnIsEnabled()[pri:0, instance:com.sevenrmartsupermarket.tests.LoginTest@25be7b63]" name="verifySignInButtonnIsEnabled" class="com.sevenrmartsupermarket.tests.LoginTest"/>
-      </group> <!-- smoke -->
     </groups>
-    <test started-at="2025-01-15T21:33:52 IST" name="Default test" finished-at="2025-01-15T21:34:19 IST" duration-ms="27244">
-      <class name="com.sevenrmartsupermarket.tests.LoginTest">
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:com.sevenrmartsupermarket.tests.LoginTest@25be7b63]" started-at="2025-01-15T21:33:52 IST" name="launchApplication" finished-at="2025-01-15T21:34:18 IST" duration-ms="26150" status="PASS">
+    <test started-at="2025-01-17T17:01:35 IST" name="Default test" finished-at="2025-01-17T17:02:27 IST" duration-ms="51466">
+      <class name="com.sevenrmartsupermarket.tests.ManageContactTest">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:com.sevenrmartsupermarket.tests.ManageContactTest@3eb25e1a]" started-at="2025-01-17T17:01:38 IST" name="launchApplication" finished-at="2025-01-17T17:02:16 IST" duration-ms="38464" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApplication -->
-        <test-method signature="verifySignInButtonnIsEnabled()[pri:0, instance:com.sevenrmartsupermarket.tests.LoginTest@25be7b63]" started-at="2025-01-15T21:34:18 IST" name="verifySignInButtonnIsEnabled" finished-at="2025-01-15T21:34:19 IST" duration-ms="982" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifySignInButtonnIsEnabled -->
-        <test-method is-config="true" signature="terminateSession(org.testng.ITestResult)[pri:0, instance:com.sevenrmartsupermarket.tests.LoginTest@25be7b63]" started-at="2025-01-15T21:34:19 IST" name="terminateSession" finished-at="2025-01-15T21:34:19 IST" duration-ms="8" status="PASS">
+        <test-method signature="getContactInfo(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.sevenrmartsupermarket.tests.ManageContactTest@3eb25e1a]" started-at="2025-01-17T17:02:16 IST" name="getContactInfo" data-provider="Contact Information" finished-at="2025-01-17T17:02:27 IST" duration-ms="10289" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifySignInButtonnIsEnabled status=SUCCESS method=LoginTest.verifySignInButtonnIsEnabled()[pri:0, instance:com.sevenrmartsupermarket.tests.LoginTest@25be7b63] output={null}]]]>
+                <![CDATA[9876500]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[john@example.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[ABC gyugyuStreet]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[9.pm]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[1000]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getContactInfo -->
+        <test-method is-config="true" signature="terminateSession(org.testng.ITestResult)[pri:0, instance:com.sevenrmartsupermarket.tests.ManageContactTest@3eb25e1a]" started-at="2025-01-17T17:02:27 IST" name="terminateSession" finished-at="2025-01-17T17:02:27 IST" duration-ms="9" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=getContactInfo status=SUCCESS method=ManageContactTest.getContactInfo(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.sevenrmartsupermarket.tests.ManageContactTest@3eb25e1a] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- terminateSession -->
-      </class> <!-- com.sevenrmartsupermarket.tests.LoginTest -->
+      </class> <!-- com.sevenrmartsupermarket.tests.ManageContactTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

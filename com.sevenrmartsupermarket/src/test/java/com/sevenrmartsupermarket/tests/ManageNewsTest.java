@@ -21,14 +21,13 @@ public class ManageNewsTest extends Base {
 		homepage = new HomePage(driver);
 		managenewspage = new ManageNewsPage(driver);
 		loginpage.login();
-		// homepage.acceptMainAlertMsg();
 		homepage.clickOnTile("Manage News");
-		//managenewspage.sendNews("New Heading");
-		excelreader.setExcelFile("NewsExcelData", "NewsData");
-		String data = excelreader.getCellData(1, 0);
-		System.out.println(data);
-		managenewspage.sendNews(data);
+		excelreader.setExcelFile("NewsData", "NewsData");
+		String Actualdata = excelreader.getCellData(1, 0);
+		String Expecteddata ="First";
+		managenewspage.sendNews(Actualdata);
 		managenewspage.clickSaveBtn();
+		//Assert.assertEquals(Actualdata,Expecteddata);
 	}
 
 	@Test

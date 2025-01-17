@@ -12,14 +12,13 @@ public class HomeTest extends Base {
 	LoginPage loginpage;
 	HomePage homepage;
 
-	@Test
+	@Test(retryAnalyzer = com.sevenrmartsupermarket.listeners.RetryAnalyser.class)
 	public void verifyProfileName() {
-		homepage=new HomePage(driver);
+		//homepage=new HomePage(driver);
 		loginpage=new LoginPage(driver);
-		loginpage.login();
+		homepage=loginpage.login();
 		String actualPofileName=homepage.getProfileName();
-		String expectedPofileName="Admin";
-		System.out.println(actualPofileName);
+		String expectedPofileName="admin";
 		Assert.assertEquals(actualPofileName, expectedPofileName);
 	}
 }
