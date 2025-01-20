@@ -19,6 +19,7 @@ import com.sevenrmartsupermarket.utilities.ScreenShotCapture;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Base {
+	
 	/** driver declaration */
 	public WebDriver driver;
 
@@ -52,31 +53,26 @@ public class Base {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(Constants.IMPLICIT_WAIT));
 		driver.manage().deleteAllCookies();
-
 	}
-	@BeforeMethod(enabled=true,alwaysRun = true)
+
+	@BeforeMethod(enabled = true, alwaysRun = true)
 	public void launchApplication() {
-		String browser=properties.getProperty("browser");
-		String url=properties.getProperty("url");
-		intialize(browser, url);
-		
-	}
-
-	@BeforeMethod(enabled=false)
-	@Parameters("browser")
-	public void launchApplication(String browser) {
-
+		String browser = properties.getProperty("browser");
 		String url = properties.getProperty("url");
 		intialize(browser, url);
+	}
 
+	@BeforeMethod(enabled = false)
+	@Parameters("browser")
+	public void launchApplication(String browser) {
+		String url = properties.getProperty("url");
+		intialize(browser, url);
 	}
 
 	@AfterMethod(alwaysRun = true)
 	public void terminateSession(ITestResult itestresult) {
-		// chech the testcsae is pass/fail
-		// check teastcase pass or fail,IF TEST CASE IS FAIL
 		if (itestresult.getStatus() == ITestResult.FAILURE) {
-			screenshotcapture.takeScreenShot(driver, itestresult.getName());// return testcase name
+			screenshotcapture.takeScreenShot(driver, itestresult.getName());
 		}
 	}
 }

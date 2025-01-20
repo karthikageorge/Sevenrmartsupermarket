@@ -17,7 +17,7 @@ public class LoginTest extends Base {
 	
 	
 	@Test(groups = {"smoke", "regression"})
-	public void verifySignInButtonnIsEnabled() {
+	public void verifySignInButtonIsEnabled() {
 		loginpage=new LoginPage(driver);
 		boolean actualResult=loginpage.signInBtnIsEnabled();
 		System.out.println(GeneralUtility.getRandomName());
@@ -25,7 +25,7 @@ public class LoginTest extends Base {
 		
 	}
 	@Test(groups="smoke")
-	public void verifyCheckBoxIsEnabled() {
+	public void verifyRememberMeCheckBoxIsEnabled() {
 		loginpage=new LoginPage(driver);
 		boolean actualResult=loginpage.checkBoxIsEnabled();
 	   	Assert.assertTrue(actualResult);
@@ -33,7 +33,7 @@ public class LoginTest extends Base {
 	}
 	
 	@Test
-	public void verifyAlertMsgForInvalidPassword() {
+	public void verifyAlertMessageForInvalidPassword() {
 		loginpage=new LoginPage(driver);
 		String actualAlertMsg=loginpage.loginWithInvalidPassword("Admin","passward");
 		String s[]=actualAlertMsg.split("\n");
@@ -41,6 +41,13 @@ public class LoginTest extends Base {
 		String expectedMsg="Invalid Username/Password";
 		Assert.assertEquals(splittedActualMsg,expectedMsg);
 		 
+	}
+	@Test
+	public void verifyColorOfSignInButton() {
+		loginpage=new LoginPage(driver);
+		String actualColor=loginpage.getLoginButtonColor("background-color");
+		String expectedColor="rgba(52, 58, 64, 1)";
+		Assert.assertEquals(actualColor, expectedColor);
 	}
 	
 }

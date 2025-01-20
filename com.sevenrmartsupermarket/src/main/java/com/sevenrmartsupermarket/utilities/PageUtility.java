@@ -32,6 +32,7 @@ public class PageUtility {
 		actions.moveToElement(element).build().perform();
 		actions.click().perform();
 	}
+
 	public void jsClick(WebElement element) {
 		js.executeScript("arguments[0].click();", element);
 	}
@@ -69,7 +70,5 @@ public class PageUtility {
 			return false;
 		}
 	}
-	/*
-	 * public void jsClick() { js.executeScript(null, null) }
-	 */
+
 }

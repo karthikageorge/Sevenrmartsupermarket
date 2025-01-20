@@ -23,11 +23,11 @@ public class ManageNewsTest extends Base {
 		loginpage.login();
 		homepage.clickOnTile("Manage News");
 		excelreader.setExcelFile("NewsData", "NewsData");
-		String Actualdata = excelreader.getCellData(1, 0);
-		String Expecteddata ="First";
-		managenewspage.sendNews(Actualdata);
-		managenewspage.clickSaveBtn();
-		//Assert.assertEquals(Actualdata,Expecteddata);
+		String actualData = excelreader.getCellData(1, 0);
+		String expectedData ="First";
+		managenewspage.sendNews(actualData);
+		managenewspage.clickSaveButton();
+		Assert.assertEquals(actualData,expectedData);
 	}
 
 	@Test
@@ -38,12 +38,12 @@ public class ManageNewsTest extends Base {
 		loginpage.login();
 		homepage.clickOnTile("Manage News");
 		managenewspage.sendNews("New Heading");
-		managenewspage.clickSaveBtn();
+		managenewspage.clickSaveButton();
 		String AlertMessage = managenewspage.getAlert();
 		String s[] = AlertMessage.split("\n");
-		String actualAlertMsg = s[2];
-		String expectedAlertMsg = "News Created Successfully";
-		Assert.assertEquals(actualAlertMsg, expectedAlertMsg);
+		String actualAlertMessage = s[2];
+		String expectedAlertMessage = "News Created Successfully";
+		Assert.assertEquals(actualAlertMessage, expectedAlertMessage);
 
 	}
 }

@@ -14,7 +14,6 @@ public class HomeTest extends Base {
 
 	@Test(retryAnalyzer = com.sevenrmartsupermarket.listeners.RetryAnalyser.class)
 	public void verifyProfileName() {
-		//homepage=new HomePage(driver);
 		loginpage=new LoginPage(driver);
 		homepage=loginpage.login();
 		String actualPofileName=homepage.getProfileName();

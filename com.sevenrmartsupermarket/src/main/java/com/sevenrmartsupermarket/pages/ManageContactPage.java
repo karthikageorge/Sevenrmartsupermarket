@@ -2,6 +2,7 @@ package com.sevenrmartsupermarket.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -12,8 +13,9 @@ public class ManageContactPage {
 	WebDriver driver;
 
 	PageUtility pageutility;
-	GeneralUtility generalutility;
+	GeneralUtility generalutility = new GeneralUtility();
 
+	@CacheLookup
 	@FindBy(xpath = "//input[@id='phone']")
 	private WebElement phoneFieldElement;
 	@FindBy(xpath = "//input[@id='email']")
@@ -28,6 +30,10 @@ public class ManageContactPage {
 	private WebElement editButtonElement;
 	@FindBy(xpath = "//button[@class='btn btn-block-sm btn-info']")
 	private WebElement updateButtonElement;
+	@FindBy(xpath = "//button[@class='btn btn-block-sm btn-info']")
+	private WebElement alertMessageElement;
+	@FindBy(xpath = "(//div[@class='card-header']//h3[@class='card-title'])[1]")
+	private WebElement contactUsHeadingElement;
 
 	public ManageContactPage(WebDriver driver) {
 		this.driver = driver;
@@ -59,6 +65,10 @@ public class ManageContactPage {
 		deliveryChargeFieldElement.sendKeys(charge);
 
 		clickOnUpdateButtton();
+	}
+
+	public String getHeading(String heading) {
+		return contactUsHeadingElement.getText();
 	}
 
 }

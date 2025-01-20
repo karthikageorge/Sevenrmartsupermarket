@@ -19,7 +19,7 @@ public class LoginPage {
 
 	Properties properties = new Properties();
 	GeneralUtility generalutility = new GeneralUtility();
-
+	
 	@CacheLookup
 	@FindBy(xpath = "//input[@placeholder='Username']")
 	private WebElement userNameFieldElement;
@@ -45,15 +45,16 @@ public class LoginPage {
 		}
 	}
 
-	public void enterUserName(String userName) {
+	public String enterUserName(String userName) {
 		userNameFieldElement.sendKeys(userName);
+		return userName;
 	}
 
 	public void enterPassword(String passWord) {
 		passwordFieldElement.sendKeys(passWord);
 	}
 
-	public void clickOnSignInBtn() {
+	public void clickOnSignInButton() {
 		WaitUtility waitutility = new WaitUtility(driver);
 		waitutility.waitForElementToBeClicked(signInButtonElement, 30);
 		signInButtonElement.click();
@@ -62,7 +63,7 @@ public class LoginPage {
 	public HomePage login(String userName, String passWord) {
 		enterUserName(userName);
 		enterPassword(passWord);
-		clickOnSignInBtn();
+		clickOnSignInButton();
 		return new HomePage(driver);
 
 	}
@@ -72,7 +73,7 @@ public class LoginPage {
 		String passWord = properties.getProperty("password");
 		enterUserName(userName);
 		enterPassword(passWord);
-		clickOnSignInBtn();
+		clickOnSignInButton();
 		return new HomePage(driver);
 	}
 
@@ -94,10 +95,13 @@ public class LoginPage {
 	public String loginWithInvalidPassword(String userName, String passWord) {
 		enterUserName(userName);
 		enterPassword(passWord);
-		clickOnSignInBtn();
+		clickOnSignInButton();
 		String alertMessage = generalutility.alertText(invalidUsernamePasswordElement);
 		return alertMessage;
 
+	}
+	public String getLoginButtonColor(String color) {
+		return generalutility.get_Cssvalue(signInButtonElement,color);
 	}
 
 }

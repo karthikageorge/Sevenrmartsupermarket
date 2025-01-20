@@ -13,12 +13,12 @@ import com.github.javafaker.Faker;
 public class GeneralUtility {
 	public String get_Attribute(WebElement element, String attribute) {
 
-		return element.getAttribute(attribute);// method is getattribute
+		return element.getAttribute(attribute);
 	}
 
 	public String get_Cssvalue(WebElement element, String property) {
 
-		return element.getCssValue(property);// method is getattribute
+		return element.getCssValue(property);
 	}
 
 	public List<String> getTextOfElements(List<WebElement> elements) {
@@ -44,20 +44,24 @@ public class GeneralUtility {
 		}
 		return singleData;
 	}
+
 	public String alertText(WebElement element) {
 		return element.getText();
 	}
-public static String getTimestamp() {
-	String timeStamp = new SimpleDateFormat("dd_MM_yyyy_hh_mm_ss").format(new Date());
-	return timeStamp;
-}
-public String generateRandomUserName() {
-	String random = RandomStringUtils.randomAlphanumeric(12);
-	String randomUsername = random + "@gmail.com";
-	return randomUsername;
-} 
-public static String getRandomName() {
-	Faker faker=new Faker();
-	return faker.name().firstName();
-}
+
+	public static String getTimestamp() {
+		String timeStamp = new SimpleDateFormat("dd_MM_yyyy_hh_mm_ss").format(new Date());
+		return timeStamp;
+	}
+
+	public String generateRandomUserName() {
+		String random = RandomStringUtils.randomAlphanumeric(12);
+		String randomUsername = random + "@gmail.com";
+		return randomUsername;
+	}
+
+	public static String getRandomName() {
+		Faker faker = new Faker();
+		return faker.name().firstName();
+	}
 }
