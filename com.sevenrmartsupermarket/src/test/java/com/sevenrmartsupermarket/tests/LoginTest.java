@@ -20,7 +20,6 @@ public class LoginTest extends Base {
 	public void verifySignInButtonIsEnabled() {
 		loginpage=new LoginPage(driver);
 		boolean actualResult=loginpage.signInBtnIsEnabled();
-		System.out.println(GeneralUtility.getRandomName());
 		Assert.assertTrue(actualResult);
 		
 	}
@@ -47,6 +46,7 @@ public class LoginTest extends Base {
 		loginpage=new LoginPage(driver);
 		String actualColor=loginpage.getLoginButtonColor("background-color");
 		String expectedColor="rgba(52, 58, 64, 1)";
+		System.out.println(actualColor);
 		Assert.assertEquals(actualColor, expectedColor);
 	}
 	
